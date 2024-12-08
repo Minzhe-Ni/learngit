@@ -4,3 +4,4 @@ Git has a mutable index called stage.
 Git tracks changes.
 Successfully push to github.
 Creating a new branch.
+After review meeting, construct git on server.
