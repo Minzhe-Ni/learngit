@@ -24,7 +24,7 @@ su - git
 chmod 700 /home/git/.ssh
 chmod 600 /home/git/.ssh/authorized_keys
 ```
-3. Create public key on client (local PC) and copy into `authorized_keys`.
+3. Create the public key on client (local PC) and copy the public key into `authorized_keys`.
 ```
 ssh-keygen -t rsa
 ```
@@ -42,7 +42,8 @@ git init --bare sample.git
 ```
 sudo chown -R git:git sample.git
 ```
-3. Not allow shell to log on git account
+3. Prohibit running shell to log on git account 
+
 Edit `/etc/passwd` under root user.
 ```
 git:x:1001:1001:,,,:/home/git:/bin/bash
