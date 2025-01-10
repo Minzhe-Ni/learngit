@@ -5,8 +5,8 @@
 2. Open relative ports: TCP 21115-21119, UDP 21116.
 
 ## Create docker-compose.yml
-1. Create a folder, named 'rustdesk'. 
-2. Edit content in docker-compose.yml.
+1. Create a folder, named `rustdesk`. 
+2. Edit `docker-compose.yml` like the following content.
 ```
 version: '3'
 
@@ -18,18 +18,18 @@ services:
   hbbs: # RustDesk ID/Rendezvous 服务器
     container_name: hbbs
     ports:
-      - 21115:21115           # 用于 NAT 类型测试的 TCP
-      - 21116:21116           # TCP打孔
-      - 21116:21116/udp       # UDP心跳/ID服务器
-      - 21118:21118           # 如果要运行web客户端，则使用TCP进行web套接字
+      - 21115:21115           # TCP for NAT type test
+      - 21116:21116           # TCP 
+      - 21116:21116/udp       # UDP / ID server
+      - 21118:21118           # If run web client，use TCP to web socket
     image: rustdesk/rustdesk-server:latest
     command: hbbs
     volumes:
       - /data/rustdesk/hbbs:/root
     environment:
-      - "RELAY=x.x.x.x:21117"   # 运行这些容器的服务器的【IP:port】或域名
-      - "ENCRYPTED_ONLY=1"      # 开启加密
-      - "KEY=xxxxxx"            # 自定义KEY，去掉这一行可以自动生成
+      - "RELAY=x.x.x.x:21117"   # IP:port or domain name to run the docker image
+      - "ENCRYPTED_ONLY=1"      # Enable encryption
+      - "KEY=xxxxxx"            # Define key. Remove this line, key will be generated auto. 
     networks:
       - rustdesk-net
     depends_on:
@@ -39,8 +39,8 @@ services:
   hbbr: # RustDesk 中继服务器
     container_name: hbbr
     ports:
-      - 21117:21117           # TCP中继
-      - 21119:21119           # 如果要运行web客户端，则使用TCP进行web套接字
+      - 21117:21117           # TCP relay
+      - 21119:21119           # If run web client，use TCP to web socket
     image: rustdesk/rustdesk-server:latest
     command: hbbr
     volumes:
@@ -51,4 +51,4 @@ services:
 ```
 
 3. Start run. \
-    `docker compose up -d`
+`docker compose up -d`
