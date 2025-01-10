@@ -50,5 +50,7 @@ services:
     restart: unless-stopped
 ```
 
-3. Start run. \
-`docker compose up -d`
+3. Start run. 
+```
+docker compose up -d
+```
