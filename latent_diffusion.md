@@ -10,4 +10,8 @@ The latent diffusion models (LDMs) is a simple and efficient way to siginificant
 3. Conditioning Mechanisms \
     Diffusion models are capable of modeling conditional distributions of the form $p(z|y)$. This can be implemented with a conditional denoising autoenoder $\epsilon_\theta(z_t, t, y)$ amd paves the way to controlling the synthesis process through inputs $y$ such as text, semantic maps or other image-to-image translation tasks. 
 
-   
+
+
+# Code Notes
+1. Torch does not support `torch._six` anymore, so remove `from torch._six import string_classes`.
+2. Replace `string_classes` with `str`. 
