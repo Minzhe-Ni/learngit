@@ -55,10 +55,8 @@ sudo apt install git
     After that, git user can use git via ssh, but not log on shell. 
 
 ## Connect client to remote reposity
-    ```
-    git remote add origin git@server-ip:/path/to/.git
-    git push -u origin master
-    ```
+1. `git remote add origin git@server-ip:/path/to/.git`
+2. `git push -u origin master`
 
 ## Remove file from Git tracking while keeping in filesystem
 1. Remove file from Git's tracking
