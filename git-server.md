@@ -60,6 +60,19 @@ git remote add origin git@server-ip:/path/to/.git
 git push -u origin master
 ```
 
+## Remove file from Git tracking while keeping in filesystem
+1. Remove file from Git's tracking
+   ```
+   git rm --cached file
+   ```
+2. Commit this change
+   ```
+   git commit -m "Stop tracking this file"
+   ```
+3. Push to remote repository
+   ```
+   git push origin master
+   ```
 
 
 
