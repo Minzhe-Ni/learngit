@@ -15,7 +15,7 @@ networks:
     external: false
 
 services:
-  hbbs: # RustDesk ID/Rendezvous 服务器
+  hbbs: # RustDesk ID/Rendezvous Server
     container_name: hbbs
     ports:
       - 21115:21115           # TCP for NAT type test
@@ -36,7 +36,7 @@ services:
       - hbbr
     restart: unless-stopped
 
-  hbbr: # RustDesk 中继服务器
+  hbbr: # RustDesk Relay Server
     container_name: hbbr
     ports:
       - 21117:21117           # TCP relay
